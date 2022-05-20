@@ -43,6 +43,8 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
+        $formFields['user_id'] = auth()->id();
+
         Listing::create($formFields);
         return redirect('/')->with('message', 'Gig created succesfully!');
     }
@@ -70,13 +72,13 @@ class ListingController extends Controller
 
         $listing->update($formFields);
 
-        return back()->with('message', 'Form updated successfully');
+        return redirect('/')->with('message', 'Form updated successfully');
     }
 
     // Delete Listing
     public function destroy(Listing $listing){
         $listing->delete();
-        return redirect('/')->with('message', 'Deleted successfully');
+        return redirect('/')->with('message', ' Deleted successfully');
     }
 }
 
