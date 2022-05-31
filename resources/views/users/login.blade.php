@@ -2,6 +2,11 @@
 
 @section('content')
 
+   
+        
+
+
+        
 <x-card class="p-10  max-w-lg mx-auto mt-24">
     <header class="text-center">
         <h2 class="text-2xl font-bold uppercase mb-1">
@@ -42,7 +47,7 @@
             @enderror
         </div>
 
-        <div class="mb-6">
+        <div class="mb-6 flex">
             <button
                 type="submit"
                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
